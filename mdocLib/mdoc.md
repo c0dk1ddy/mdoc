@@ -1,7 +1,8 @@
 # mdoc, markdown as docstring
 
-installation : `pip install mdoc`
-using : `import mdoc`
+installation : `pip install mdocLib`
+using : `import mdocLib`ls
+
 
 ## function / decorators
  - [`globmdoc(globals())` : set module (global scope) docstring as samename-markdown markup-text value.](./fdocs/globmdoc.md)
