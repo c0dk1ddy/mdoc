@@ -8,7 +8,8 @@
     "install_requires" : ["martialaw"],
     "keywords" : ["md", "markdown", "as", "doc", "string", "docstring", "document", "markdown as docstring", "markdown as document", "I hate fucking typings"],
     "python_requires" : ">=3.6",
-    "package_data" : {},
+    "package_dir" : {"mdocLib" : "mdocLib"},
+    "package_data" : {"mypkg" : ["data/*.md"]},
     "classifiers" : [
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
