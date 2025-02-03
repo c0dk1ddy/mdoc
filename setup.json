@@ -7,10 +7,17 @@
     "url" : "https://github.com/c0dk1ddy/mdoc",
     "install_requires" : ["martialaw"],
     "keywords" : ["md", "markdown", "as", "doc", "string", "docstring", "document", "markdown as docstring", "markdown as document", "I hate fucking typings"],
-    "python_requires" : "",
+    "python_requires" : "3.6",
     "package_data" : {},
     "classifiers" : [
-        "Programming Language :: Python :: 3.x",
-        ...
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14"
     ]
 }
