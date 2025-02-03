@@ -1,58 +1,53 @@
-from functools import wraps as smart_deco_wraps
-from martialaw.martialaw import * #well;; it was Joke Libs;; well;;
-import builtins
-from os.path import splitext
+from functools import wraps as _smart_deco_wraps #[HIDED]
+from martialaw.martialaw import martialaw as _my_personal_closer #well;; it was Joke Libs;; well;; [tip : if U couldn't import it; use pip install `martialaw`] #[HIDED]
+import builtins as _builtins #[HIDED]
+from os.path import splitext as _splitext #[HIDED]
+from os.path import dirname as _dirname #use at __mdoc_py_fdoc__, #[HIDED]
 
-'''
-# mdoc, markdown as docstring
+# ========================== START MAINSRC ========================= #
 
-# function / decorators
- - globmdoc(globals()) : set module (global scope) docstring as samename-markdown markup-text value.
- - @objmdoc(markdown path) : set obj which class, function's document as markdown file's value.
+addattr = lambda ret, obj, name, value : (ret, setattr(obj, name, value))[0] # see docs.
+function_on_builtins = lambda f : addattr(f, _builtins, f.__name__, f)
+extless = lambda path : _splitext(path)[0] #path could be str
 
-#not suggested
- - @setmdoc : it gives one positional string argument what markdown file value, but as using is seems like giving mdpath not md value. @setmdoc decorated method should be work as setting docstring by input data.
-'''
+def __mdoc_py_fdoc__(func : callable) -> callable:
+    with open(f'{_dirname(__file__)}/fdocs/{func.__name__}.md') as fp: func.__doc__ = fp.read()
+    return func
 
-function_on_builtins = lambda f : setattr(builtins, f.__name__, f)
-extless = lambda path : splitext([path])[0]
+with open(f'{_dirname(__file__)}/fdocs/__mdoc_py_fdoc__.md') as __fp__ : __mdoc_py_fdoc__.__doc__ = __fp__.read() #see? it's duck tape. It's fucking sucks that I meant.
 
-@(lambda g : lambda f : smart_deco_wraps(f)(g(f))) #smart_closer_deco_wraps
-@martialaw
+@(lambda g : lambda f : _smart_deco_wraps(f)(g(f))) #smart_closer_deco_wraps
+@_my_personal_closer
+@__mdoc_py_fdoc__
 def setmdoc(setter : callable, mdpath : str):
-    '''
-    # `@setmdoc` decorator. setmdoc by get md value to your function -by mdoc
-
-    ## using example
-
-    ```
-    @setmdoc
-    def funcion_name(argument_name_that_what_md_value : itmightbestr_orderwise_ithinkthat_impossible_but_anyway_optional_typehint) -> optional_typehint:
-        ... #function source that set doc
-    ```
-    '''
-    with open(mdpath) as fp: setter(fp.read())
+    with open(mdpath) as mdfile:
+        return setter(mdfile.read())
 
 @function_on_builtins
+@__mdoc_py_fdoc__
 def globmdoc(scope : dict) -> None:
-    '''
-    # globmdoc(globals()) -by mdoc
-    find same name (extless script file path is same.) md path to set global scope docstring by get __doc__
-    '''
     @setmdoc
+    @__mdoc_py_fdoc__
     def mdocsetter(src : str) -> None:
-        '''
-        #mdocsetter -byy mdoc global scope docstring setter
-        '''
-        scope['__doc__'] = src
+        scope['__doc__'] = src #scope is global scope, as code shows.... haha;; (this comment write 4 docs)
     mdocsetter(f'{extless(scope["__file__"])}.md') # find same name (extless script file path is same.) path
 
 @function_on_builtins
 @setmdoc
+@__mdoc_py_fdoc__
 def objmdoc(md : str) -> callable:
-    '''
-    # `@objmdoc` decorator `@objmdoc(mdpath)` to use -by mdoc
+    return lambda ob : addattr(ob, ob, '__doc__', md)
 
-    TIPS : also can use at class
-    '''
-    return lambda ob : setattr(ob, '__doc__', md)
+# ========================== END MAINSRC ========================= #
+
+# ===== LOAD DOCS ===== #
+globmdoc(globals())
+# ===== LOAD DOCS ===== #
+
+#oh shit I should clean it fuck!!!!!
+
+#was should be simple............ ...oh............. ...nah....... ........no.....
+#fstring...
+#FP
+#decorator
+#nah shit.

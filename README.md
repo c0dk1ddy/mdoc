@@ -1,4 +1,4 @@
-# mdoc
+# [mdoc](./mdoc/mdoc.md)
 
 OHHH FUCK! I hate writing docs!
 I WANT BURN UP THE DOCS!!
