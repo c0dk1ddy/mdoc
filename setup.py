@@ -1,5 +1,3 @@
-import mysetuplib
+from setuptools import setup
 
-@mysetup_py(globals())
-def main():
-    ...
+...

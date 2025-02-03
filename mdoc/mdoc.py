@@ -1,7 +1,18 @@
 from functools import wraps as smart_deco_wraps
-from martialaw.martialaw import *
+from martialaw.martialaw import * #well;; it was Joke Libs;; well;;
 import builtins
 from os.path import splitext
+
+'''
+# mdoc, markdown as docstring
+
+# function / decorators
+ - globmdoc(globals()) : set module (global scope) docstring as samename-markdown markup-text value.
+ - @objmdoc(markdown path) : set obj which class, function's document as markdown file's value.
+
+#not suggested
+ - @setmdoc : it gives one positional string argument what markdown file value, but as using is seems like giving mdpath not md value. @setmdoc decorated method should be work as setting docstring by input data.
+'''
 
 function_on_builtins = lambda f : setattr(builtins, f.__name__, f)
 extless = lambda path : splitext([path])[0]
