@@ -13,7 +13,7 @@ using : `import mdocLib`ls
  > it can use when you using mdoc
  > ```python
  > #some_file.py
- > import mdoc #using mdoc
+ > import mdocLib #using mdoc
  > globmdoc(globals()) #using globmdocs
  > ```
  > 
@@ -24,7 +24,7 @@ using : `import mdocLib`ls
  > it also can use when you using mdoc
  > ```python
  > #any_file.py
- > import mdoc
+ > import mdocLib
  > @objmdoc("/somepath.md")
  > def some_funcion(*any, **way):
  >     ...
