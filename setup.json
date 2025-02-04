@@ -1,6 +1,6 @@
 {
     "name" : "mdocLib",
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "description" : "mdoc, markdown as docs. well. I think that it's good idea. but watch out. your code can be stinks easly it you didn't write docstring yourself.",
     "auther" : "du7ec",
     "auther_email" : "dutec6834@gmail.com",
