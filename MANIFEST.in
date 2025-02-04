@@ -1,4 +1,4 @@
 # MANIFEST.in
-include mdocLib/*
-include mdocLib/fdocs/*
+recursive-include mdocLib/*
+recursive-include mdocLib/fdocs/*
 include setup.json

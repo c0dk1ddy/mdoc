@@ -10,6 +10,7 @@
     "python_requires" : ">=3.6",
     "package_dir" : {"mdocLib" : "mdocLib"},
     "package_data" : {"mypkg" : ["data/*.md"]},
+    "include_package_data" : true,
     "classifiers" : [
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
